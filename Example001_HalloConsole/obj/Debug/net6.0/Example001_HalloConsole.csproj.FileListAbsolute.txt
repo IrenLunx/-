@@ -1,0 +1,15 @@
+C:\Users\ACER\Desktop\Examples\Example001_HalloConsole\bin\Debug\net6.0\Example001_HalloConsole.exe
+C:\Users\ACER\Desktop\Examples\Example001_HalloConsole\bin\Debug\net6.0\Example001_HalloConsole.deps.json
+C:\Users\ACER\Desktop\Examples\Example001_HalloConsole\bin\Debug\net6.0\Example001_HalloConsole.runtimeconfig.json
+C:\Users\ACER\Desktop\Examples\Example001_HalloConsole\bin\Debug\net6.0\Example001_HalloConsole.dll
+C:\Users\ACER\Desktop\Examples\Example001_HalloConsole\bin\Debug\net6.0\Example001_HalloConsole.pdb
+C:\Users\ACER\Desktop\Examples\Example001_HalloConsole\obj\Debug\net6.0\Example001_HalloConsole.csproj.AssemblyReference.cache
+C:\Users\ACER\Desktop\Examples\Example001_HalloConsole\obj\Debug\net6.0\Example001_HalloConsole.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ACER\Desktop\Examples\Example001_HalloConsole\obj\Debug\net6.0\Example001_HalloConsole.AssemblyInfoInputs.cache
+C:\Users\ACER\Desktop\Examples\Example001_HalloConsole\obj\Debug\net6.0\Example001_HalloConsole.AssemblyInfo.cs
+C:\Users\ACER\Desktop\Examples\Example001_HalloConsole\obj\Debug\net6.0\Example001_HalloConsole.csproj.CoreCompileInputs.cache
+C:\Users\ACER\Desktop\Examples\Example001_HalloConsole\obj\Debug\net6.0\Example001_HalloConsole.dll
+C:\Users\ACER\Desktop\Examples\Example001_HalloConsole\obj\Debug\net6.0\refint\Example001_HalloConsole.dll
+C:\Users\ACER\Desktop\Examples\Example001_HalloConsole\obj\Debug\net6.0\Example001_HalloConsole.pdb
+C:\Users\ACER\Desktop\Examples\Example001_HalloConsole\obj\Debug\net6.0\Example001_HalloConsole.genruntimeconfig.cache
+C:\Users\ACER\Desktop\Examples\Example001_HalloConsole\obj\Debug\net6.0\ref\Example001_HalloConsole.dll
