@@ -3,7 +3,7 @@
 numberA = 5;
 numberB = 25;
 
-if (numberB == numberA *numberA)
+if (numberB == numberA * numberA)
 {
     Console.WriteLine($"Число {numberB} является квадратом числа {numberA}");
 }
