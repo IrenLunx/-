@@ -8,6 +8,6 @@ if (number == 1)
     Console.Write("Четных чисел нет!");
 while (i <= number)
 {
-    Console.Write($"{i} ");
+    Console.Write(i + " ");
     i+=2; 
 }
