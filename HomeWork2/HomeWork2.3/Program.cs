@@ -5,7 +5,7 @@ Console.Write("В числе " + number);
 
 if (number < 0)
     number = -number;
-
+    
 if (number < 10 && number >= 0)
     System.Console.WriteLine(" нет третьего числа, потому что число однозначное!");
 
