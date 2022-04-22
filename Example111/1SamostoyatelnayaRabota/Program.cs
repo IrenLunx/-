@@ -58,3 +58,16 @@ int Day(int number) // По заданому номеру вывести как�
 // int number = new Random().Next(-1, 10);
 // System.Console.WriteLine("Наше число - " + number);
 // Day(number);
+
+void MaxThree(int[] array) // Максимальное из 3 чисел
+{
+    int max = array[0];
+    if (max < array[1])
+        max = array[1];
+    if (max < array[2])
+        max = array[2];
+    System.Console.WriteLine(max);
+}
+
+// int[] number = {10, 7, 6};
+// MaxThree(number);

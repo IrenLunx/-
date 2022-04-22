@@ -1,7 +1,6 @@
 ﻿// Напишите программу, которая принимает на вход координаты двух точек и находит расстояние между ними в 3D пространстве.
 
-double xa = 4, ya = 8, za = -10, xb = 1, yb = 5, zb = 7;
-double spacing = (xa - xb) * (xa - xb) + (ya - yb) * (ya - yb) + (za - zb) * (za - zb);
-spacing = Math.Sqrt(spacing);
-Console.WriteLine("Расстояние между точками = " + "{0:f3}", spacing);
-
+double[] A = {3, 6, 8};
+double[] B = {-5, 7, 9};
+double distans = Math.Sqrt((A[0] - B[0]) * (A[0] - B[0]) + (A[1] - B[1]) * (A[1] - B[1]) + (A[2] - B[2]) * (A[2] - B[2]));
+Console.WriteLine("Расстояние между точками = " + "{0:f3}", distans);
