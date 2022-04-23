@@ -71,3 +71,4 @@ void MaxThree(int[] array) // Максимальное из 3 чисел
 
 // int[] number = {10, 7, 6};
 // MaxThree(number);
+
