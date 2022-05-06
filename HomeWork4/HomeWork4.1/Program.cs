@@ -10,6 +10,19 @@ int NaturalDegree(int numberA, int numberB)
     return multiply;
 }
 
+int Binpow(int a, int n) // log2(n) бинарное возведение в степень
+{
+  int result = 1;
+  while (n != 0)
+  {
+    if (n % 2 == 1)
+      result *= a;
+    a *= a;
+    n /= 2;
+  }
+  return result;
+}
+
 System.Console.Write("Введите число, которое нужно возвести в степень: ");
 int number1 = int.Parse(Console.ReadLine());
 System.Console.Write("Степень: ");
