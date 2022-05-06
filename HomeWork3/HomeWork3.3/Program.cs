@@ -5,17 +5,16 @@ System.Console.WriteLine($"Наше число - {n}! Кубы чисел от 1
 int i = 1;
 int kub;
 
-while (i < n)
+while (i <= n)
 {
     kub = i * i * i;
-    if (i % 10 == 0)
-        System.Console.WriteLine($"{kub}, ");
-    else
-        Console.Write($"{kub}, ");
-    i++;
-}
-if (i == n)
-{
-    kub = i * i * i;
-    Console.Write($"{kub}.");
+    System.Console.Write($"{kub}");
+
+        if (i != n)
+            Console.Write(", ");
+        else
+            Console.Write(".");
+        if (i % 10 == 0)
+            System.Console.WriteLine();
+        i++;
 }
