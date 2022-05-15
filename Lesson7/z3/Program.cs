@@ -2,7 +2,7 @@
 
 void FillArrayRandom(int[,] array, int minValue, int maxValue)
 {
-    
+
     for (int i = 0; i < array.GetLength(0); i++)
     {
         for (int j = 0; j < array.GetLength(1); j++)
@@ -12,7 +12,7 @@ void FillArrayRandom(int[,] array, int minValue, int maxValue)
 
 void PrintArray(int[,] array)
 {
-    
+
     for (int i = 0; i < array.GetLength(0); i++)
     {
         for (int j = 0; j < array.GetLength(1); j++)
@@ -24,14 +24,13 @@ void PrintArray(int[,] array)
 
 void SwapEvenIndexArray(int[,] array)
 {
-    for (int i = 2; i <= array.GetLength(0); i++)
+    for (int i = 0; i < array.GetLength(0) + 1; i += 2)
     {
-        if (i % 2 == 0)
+        if (i != 0)
         {
-            for (int j = 2; j <= array.GetLength(1); j++)
+            for (int j = 2; j < array.GetLength(1) + 1; j += 2)
             {
-                if (j % 2 == 0)
-                    array[i - 1, j - 1] *= array[i - 1, j - 1];
+                array[i - 1, j - 1] *= array[i - 1, j - 1];
             }
         }
     }
