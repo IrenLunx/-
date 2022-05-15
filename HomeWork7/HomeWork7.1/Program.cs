@@ -1,27 +1,28 @@
 ﻿// Задайте двумерный массив размером m * n, заполненный случайными вещественными числами
 
-void FillDoubleArray(double[,] array, double minValue, double maxValue)
+void FillDoubleArray(float[,] array, float minValue, float maxValue)
 {
     for (int i = 0; i < array.GetLength(0); i++)
     {
         for (int j = 0; j < array.GetLength(1); j++)
         {
-            array[i, j] = new Random().NextDouble() * 1000;
+            array[i, j] = (float) new Random().NextDouble() * (maxValue - minValue) + minValue;
         }
     }
 }
 
-void PrintDoubleArray(double[,] array)
+void PrintDoubleArray(float[,] array)
 {
     for (int i = 0; i < array.GetLength(0); i++)
     {
         for (int j = 0; j < array.GetLength(1); j++)
         {
-            System.Console.Write("{0:f3} ", array[i, j]);
+            System.Console.Write($"{array[i,j], 8:f2}");
         }
+        System.Console.WriteLine();
     }
 }
 
-double[,] newDoubleArray = new double[5, 4];
-FillDoubleArray(newDoubleArray, -10.6, 10.8);
+float[,] newDoubleArray = new float[5, 4];
+FillDoubleArray(newDoubleArray, -200.77f, 200.88f);
 PrintDoubleArray(newDoubleArray);
