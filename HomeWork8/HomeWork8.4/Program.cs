@@ -1,29 +1,35 @@
 ﻿// Сформируйте трёхмерный массив из неповторяющихся двузначных чисел. 
 // Напишите программу, которая будет построчно выводить массив, добавляя индексы каждого элемента
 
-int UniqueNumberArray3D(int[,,] array, int minValue, int maxValue)
+int CheckSpecialNumber(int[,,] array, int minValue, int maxValue, int number)
 {
-    int number = new Random().Next(minValue, maxValue);
-    int i = 0;
-    while (i < array.GetLength(0))
+    int result = number;
+    for (int a = 0; a < array.GetLength(0); a++)
     {
-        for (int a = 0; a < array.GetLength(0); a++)
+        for (int b = 0; b < array.GetLength(1); b++)
         {
-            for (int b = 0; b < array.GetLength(1); b++)
+            for (int c = 0; c < array.GetLength(2); c++)
             {
-                for (int c = 0; c < array.GetLength(2); c++)
-                {
-                    if (number == array[a, b, c])
-                    {
-                        number = new Random().Next(minValue, maxValue);
-                        return number;
-                    }
-                }
+                if (array[a, b, c] == number)
+                    CheckSpecialNumber(array, minValue, maxValue);
             }
         }
-        i++;
     }
     return number;
+}
+
+void CheckSpecialArray(int[,,] array, int minValue, int maxValue)
+{
+    for (int a = 0; a < array.GetLength(0); a++)
+    {
+        for (int b = 0; b < array.GetLength(1); b++)
+        {
+            for (int c = 0; c < array.GetLength(2); c++)
+            {
+                CheckSpecialNumber(array, minValue, maxValue, );
+            }
+        }
+    }
 }
 
 void FillArray3D(int[,,] array, int minValue, int maxValue)
@@ -34,7 +40,7 @@ void FillArray3D(int[,,] array, int minValue, int maxValue)
         {
             for (int c = 0; c < array.GetLength(2); c++)
             {
-                array[a, b, c] = UniqueNumberArray3D(array, minValue, maxValue);
+                array[a, b, c] = new Random().Next(minValue, maxValue);
             }
         }
     }
@@ -70,6 +76,17 @@ void IndexsElementsArray3D(int[,,] array)
 }
 
 int[,,] newArray = new int[2, 2, 2];
-FillArray3D(newArray, 1, 10);
-PrintArray3D(newArray);
-IndexsElementsArray3D(newArray);
+int minRange = 1;
+int maxRange = 10;
+if (minRange < 0) minRange = -minRange;
+if (maxRange < 0) maxRange = -maxRange;
+int sumRange = minRange + maxRange;
+
+if (newArray.GetLength(0) * newArray.GetLength(1) * newArray.GetLength(2) > sumRange)
+    Console.WriteLine("Размер массива не позволяет заполнить его неповторяющимися элементами!");
+else
+{
+    FillArray3D(newArray, minRange, maxRange);
+    PrintArray3D(newArray);
+    IndexsElementsArray3D(newArray);
+}

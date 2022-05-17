@@ -36,20 +36,32 @@ void UpwardIncreaseFillArray(int[,] array, int indexRow, int indexColumn, int po
     }
 }
 
-void SpiralFillArray(int[,] array)
+void SquareSpiralFillArray(int[,] array)
 {
-    int lastRow = array.GetLength(0) - 1;
-    int lastColumn = array.GetLength(1) - 1;
-    int startRow = 0;
-    int startColumn = 0;
-    int i = 1;
-    RightwardsIncreaseFillArray(array, startRow, startColumn, lastColumn, array[startRow, startColumn]);
-    DownIncreaseFillArray(array, startRow + i, lastColumn, lastRow, array[startRow, lastColumn]);
-    LeftwardsIncreaseFillArray(array, lastRow, lastColumn - i, startColumn, array[lastRow, lastColumn]);
-    UpwardIncreaseFillArray(array, lastRow - i, startColumn, startRow + i, array[lastRow, startColumn]);
-    RightwardsIncreaseFillArray(array, startRow + i, startColumn + i, lastColumn - i, array[startRow + i, startColumn]);
-    DownIncreaseFillArray(array, lastRow - i, lastColumn - i, lastRow - i, array[startRow + i, lastColumn - i]);
-    LeftwardsIncreaseFillArray(array, lastRow - i, startColumn + i, startColumn + i, array[lastRow - i, lastColumn - i]);
+    int sizeCycle = (array.GetLength(0) + array.GetLength(1)) / 2;
+    int count = 0;
+    int fullSize = array.GetLength(0) - 1;
+    for (int i = 0; i < sizeCycle; i++)
+    {
+        if (sizeCycle - i == 1)
+        {
+            RightwardsIncreaseFillArray(array, count, count, fullSize - count, array[count, count - 1]);
+            DownIncreaseFillArray(array, count + 1, fullSize - count, fullSize - count, array[count, fullSize - count]);
+            LeftwardsIncreaseFillArray(array, fullSize - count, fullSize - count, count, array[fullSize - count, fullSize - count]);
+        }
+        else
+        {
+            if (i == 0)
+                RightwardsIncreaseFillArray(array, count, count, fullSize - count, array[count, count]);
+            else
+                RightwardsIncreaseFillArray(array, count, count, fullSize - count, array[count, count - 1]);
+            DownIncreaseFillArray(array, count + 1, fullSize - count, fullSize - count, array[count, fullSize - count]);
+            LeftwardsIncreaseFillArray(array, fullSize - count, fullSize - count - 1, count, array[fullSize - count, fullSize - count]);
+            UpwardIncreaseFillArray(array, fullSize - count - 1, count, count + 1, array[fullSize - count, count]);
+        }
+        count++;
+    }
+
 }
 
 void PrintArray(int[,] array)
@@ -57,12 +69,17 @@ void PrintArray(int[,] array)
     for (int i = 0; i < array.GetLength(0); i++)
     {
         for (int j = 0; j < array.GetLength(1); j++)
-            Console.Write($"{array[i, j], 2} ");
+            Console.Write($"{array[i, j],2} ");
         System.Console.WriteLine();
     }
     System.Console.WriteLine();
 }
 
 int[,] newArraySquare = new int[4, 4];
-SpiralFillArray(newArraySquare);
-PrintArray(newArraySquare);
+if (newArraySquare.GetLength(0) != newArraySquare.GetLength(1))
+    Console.WriteLine("Массив не является квадратным!");
+else
+{
+    SquareSpiralFillArray(newArraySquare);
+    PrintArray(newArraySquare);
+}
