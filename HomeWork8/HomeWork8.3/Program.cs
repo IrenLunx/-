@@ -19,7 +19,14 @@ int[,] ProductMatricesArray(int[,] arrayOne, int[,] arrayTwo)
     {
         for (int k = 0; k < arrayThree.GetLength(1); k++)
         {
-            arrayThree[j, k] = NumberElementMatrices(arrayOne, arrayTwo, j, k);
+            int sum = 0;
+            int result = 0;
+            for (int i = 0; i < arrayOne.GetLength(1); i++)
+            {
+                result = arrayOne[j, i] * arrayTwo[i, k];
+                sum += result;
+            }
+            arrayThree[j, k] = sum;
         }
     }
     return arrayThree;
@@ -42,7 +49,7 @@ void PrintArray(int[,] array)
     {
         for (int j = 0; j < array.GetLength(1); j++)
         {
-            Console.Write($"{array[i, j], 3} ");
+            Console.Write($"{array[i, j],3} ");
         }
         Console.WriteLine();
     }
