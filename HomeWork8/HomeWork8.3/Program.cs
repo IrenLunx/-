@@ -8,11 +8,9 @@ int[,] ProductMatricesArray(int[,] arrayOne, int[,] arrayTwo)
         for (int k = 0; k < arrayThree.GetLength(1); k++)
         {
             int sum = 0;
-            int result = 0;
             for (int i = 0; i < arrayOne.GetLength(1); i++)
             {
-                result = arrayOne[j, i] * arrayTwo[i, k];
-                sum += result;
+                sum += arrayOne[j, i] * arrayTwo[i, k];
             }
             arrayThree[j, k] = sum;
         }
