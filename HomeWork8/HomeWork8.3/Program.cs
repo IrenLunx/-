@@ -1,17 +1,5 @@
 ﻿// Задайте две матрицы. Напишите программу, которая будет находить произведение двух матриц
 
-int NumberElementMatrices(int[,] arrayOne, int[,] arrayTwo, int indexRow, int indexColumn)
-{
-    int sum = 0;
-    int result = 0;
-    for (int j = 0; j < arrayOne.GetLength(1); j++)
-    {
-        result = arrayOne[indexRow, j] * arrayTwo[j, indexColumn];
-        sum += result;
-    }
-    return sum;
-}
-
 int[,] ProductMatricesArray(int[,] arrayOne, int[,] arrayTwo)
 {
     int[,] arrayThree = new int[arrayOne.GetLength(0), arrayTwo.GetLength(1)];
