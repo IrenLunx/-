@@ -45,19 +45,67 @@ void SquareSpiralFillArray(int[,] array)
     {
         if (sizeCycle - i == 1)
         {
-            RightwardsIncreaseFillArray(array, count, count, fullSize - count, array[count, count - 1]);
-            DownIncreaseFillArray(array, count + 1, fullSize - count, fullSize - count, array[count, fullSize - count]);
-            LeftwardsIncreaseFillArray(array, fullSize - count, fullSize - count, count, array[fullSize - count, fullSize - count]);
+            RightwardsIncreaseFillArray(
+                array: array,
+                indexRow: count,
+                indexColumn: count,
+                pozishionLastColumn: fullSize - count,
+                count: array[count, count - 1]
+                );
+            DownIncreaseFillArray(
+                array: array,
+                indexRow: count + 1,
+                indexColumn: fullSize - count,
+                pozishionLastRow: fullSize - count,
+                count: array[count, fullSize - count]
+                );
+            LeftwardsIncreaseFillArray(
+                array: array, 
+                indexRow: fullSize - count, 
+                indexColumn: fullSize - count, 
+                pozishionLastColumn: count, 
+                count: array[fullSize - count, fullSize - count]
+                );
         }
         else
         {
             if (i == 0)
-                RightwardsIncreaseFillArray(array, count, count, fullSize - count, array[count, count]);
+                RightwardsIncreaseFillArray(
+                    array: array, 
+                    indexRow: count, 
+                    indexColumn: count, 
+                    pozishionLastColumn: fullSize - count, 
+                    count: array[count, count]
+                    );
             else
-                RightwardsIncreaseFillArray(array, count, count, fullSize - count, array[count, count - 1]);
-            DownIncreaseFillArray(array, count + 1, fullSize - count, fullSize - count, array[count, fullSize - count]);
-            LeftwardsIncreaseFillArray(array, fullSize - count, fullSize - count - 1, count, array[fullSize - count, fullSize - count]);
-            UpwardIncreaseFillArray(array, fullSize - count - 1, count, count + 1, array[fullSize - count, count]);
+                RightwardsIncreaseFillArray(
+                    array: array, 
+                    indexRow: count, 
+                    indexColumn: count, 
+                    pozishionLastColumn: fullSize - count, 
+                    count: array[count, count - 1]
+                    );
+            DownIncreaseFillArray(
+                array: array, 
+                indexRow: count + 1, 
+                indexColumn: fullSize - count, 
+                pozishionLastRow: fullSize - count, 
+                count: array[count, fullSize - count]
+                );
+            LeftwardsIncreaseFillArray(
+                array: array, 
+                indexRow: fullSize - count, 
+                indexColumn: fullSize - count - 1, 
+                pozishionLastColumn: count, 
+                count: array[fullSize - count, fullSize - count]
+                );
+            UpwardIncreaseFillArray(
+                array: array, 
+                indexRow: fullSize - count - 1, 
+                indexColumn: count, 
+                pozishionLastRow: count + 1, 
+                count: array[fullSize - count, count]
+                );
         }
         count++;
     }
@@ -69,7 +117,7 @@ void PrintArray(int[,] array)
     for (int i = 0; i < array.GetLength(0); i++)
     {
         for (int j = 0; j < array.GetLength(1); j++)
-            Console.Write($"{array[i, j], 2} ");
+            Console.Write($"{array[i, j],2} ");
         System.Console.WriteLine();
     }
     System.Console.WriteLine();
