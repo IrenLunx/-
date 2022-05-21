@@ -2,7 +2,7 @@
 // N = 5 -> "1, 2, 3, 4, 5"
 // N = 6 -> "1, 2, 3, 4, 5, 6"
 
-void PrintToNumber(int currentNum, int maxVoid)
+void PrintToNumber(int currentNum, int maxVoid) // 1 variant resheniya
 {
     if (currentNum <= maxVoid)
     {
@@ -19,7 +19,7 @@ int n = 5;
 int i = 1;
 PrintToNumber(i, n);
 
-Console.Write("Введите число: ");
+Console.Write("Введите число: "); // 2 variant resheniya
 int m = Convert.ToInt32(Console.ReadLine());
 
 void PrintNums(int maxNum, int currentNum = 1)
