@@ -4,8 +4,7 @@
 
 int SumNumeralsNumber(int m, int n)
 {
-    if (m > n) return 0;
-    return m + SumNumeralsNumber(m + 1, n);
+    return m > n ? 0 : m + SumNumeralsNumber(m + 1, n);
 }
 
 int m = 1;
